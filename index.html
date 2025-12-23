@@ -1,114 +1,163 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>megadon</title>
-<link rel="icon" type="image/svg+xml" href="favicon.svg">
-<style>
-    body {
-        font-family: Arial, sans-serif;
-        text-align: center;
-        background-color: #ffffff;
-        padding: 20px;
-    }
-    .video-title {
-        font-size: 1em;
-        font-weight: bold;
-        margin-bottom: 18px;
-        letter-spacing: 1px;
-        color: black;
-    }
-    .video-wrapper {
-        position: relative;
-        width: 100%;
-        max-width: 720px;
-        margin: 0 auto;
-    }
-    video {
-        width: 100%;
-        max-width: 100%;
-        border-radius: 10px;
-        display: block;
-    }
-    .video-card h2 {
-        font-size: 16px;
-        color: #90caf9;
-        margin-top: 10px;
-    }
-    .ad-banner-inside {
-        position: absolute;
-        top: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 320px;
-        height: 50px;
-        background: rgba(255,255,255,0.92);
-        border-radius: 10px 10px 0 0;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.10);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        z-index: 2;
-        overflow: hidden;
-    }
-    @media (max-width: 400px) {
-    .ad-banner-inside {
-        width: 95vw;
-        height: 40px;
-        font-size: 0.85em;
-    }
+  <meta charset="UTF-8">
+  <title>megadon</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <style>
+    *, :after, :before { box-sizing: border-box;}
+ ::-webkit-scrollbar { width: 2px;}
+@keyframes para {100% {background-position: -5000px 20%, -800px 95%, 500px 50%, 1000px 100%, 400px 0;}}   
+body { 
+   margin: 0;
+   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+   height: 100%;
+   width: auto;
+  background-color: #000;
+  background-image: 
+    url(""), /*1*/
+    url(""), /*2*/
+    url(""), /*3*/
+    url(""); /*4*/
+  background-repeat: repeat-x;
+  background-position: 0 20%, 0 100%, 0 50%, 0 100%, 0 0;
+  background-size: 100%;
+  animation: 50s para infinite linear;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      color: var(--text-color);
+      text-align: center;
+  text-align: center;
 }
-</style>
+    :root {
+      --primary-color: gold;    /* Warna utama (ganti sesuai selera) */
+      --bg-color: black;         /* Warna background */
+      --text-color: white;
+      --button-text: black;
+    }
+
+
+
+    .container {
+      max-width: 500px;
+      margin: auto;
+      padding: 30px 20px;
+    }
+
+    .profile-pic {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid var(--primary-color);
+      margin-bottom: 15px;
+    }
+
+    h1 {
+      font-size: 24px;
+      margin-bottom: 5px;
+    }
+
+    p {
+      font-size: 14px;
+      margin-bottom: 30px;
+    }
+
+    .link-btn {
+      display: block;
+      width: 100%;
+      background: var(--primary-color);
+      color: var(--button-text);
+      padding: 14px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 16px;
+      transition: background 0.3s ease;
+    }
+    .full-video-btn {
+      margin-top: 15px;
+      display: inline-block;
+      background-color: #ff0000;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 6px;
+      font-size: 15px;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .full-video-btn:hover {
+      background-color: #ffffff;
+    }
+    .link-btn:hover {
+      background: #c2185b; /* versi gelap dari warna utama */
+    }
+    .sampleMarquee {
+      color: white ;
+      background-color: #000000;
+      line-height: 70px;
+      padding: 15px;
+      font-weight: bold;
+      font-style: italic;
+      text-align: center;
+      font-variant: small-caps;
+    }
+    .tooltip { position: relative;}
+    .tooltip .tooltiptext {
+      visibility: hidden;
+      width: 80px;
+      color: #444;
+      text-align: center;
+      padding: 4px;
+      position: absolute;
+      bottom: 22px;
+      margin-left: -2px;
+      transition: opacity 0.3s;
+      border: 1px solid #444;
+    }
+    .tooltip:hover .tooltiptext {
+      visibility: visible;
+      opacity: 0.8;
+      font-size: 14px;
+} 
+  </style>
 </head>
-<body>   
-    <div class="video-title"><h2>𝐂𝐨𝐧𝐭𝐞𝐧𝐭 𝐍𝐞𝐰 𝟏𝟖+ | 𝐕𝐢𝐝𝐞𝐨𝐬 | 𝐕𝐢𝐛𝐞𝐬 𝐨𝐧𝐥𝐲</h2><span aria-label="smile" role="img"></span></div>
-    <center>
-<script>
-  atOptions = {
-    'key' : '1479d454c687541bea7c1f1d5b06d1db',
-    'format' : 'iframe',
-    'height' : 60,
-    'width' : 468,
-    'params' : {}
-  };
-</script>
-<script src="https://stopperscared.com/1479d454c687541bea7c1f1d5b06d1db/invoke.js"></script>
-</center>
-<br>
-<div class="video-wrapper">
-    <video autoplay loop playsinline controls poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiXcF3PagAT2Kp_PeCrcuVFqEsxCACHuvhorQ59-Vcfeut-dIs_Bynuu8edqqt-NdfH5EOmLSDrsWAbQzD2N_S_ywmjGX0LVF9-zj_YH-jZDMSIK3K_f9Sv8THWZd_UwhnVX3VjQUNrloUaWv9tLAQtBjjopQVdRcgDon53sFCZEGH1cr0R9vH7YQAzUIpR/s914/558959285_817869200893091_1063954177591524450_n.jpg">
-        <source src="https://cdn.videy.co/TXerPEhR1.mp4" type="video/mp4">
-        </video>
-        <div style="text-align: center; margin: 30px 0;">
-  <a href="https://stopperscared.com/x6jdjefid?key=de23776a131f6eeaa91c912b83b1a274" style="display: inline-flex; align-items: center; gap: 10px; background-color: #000000; color: white; font-size: 20px; font-weight: bold; padding: 16px 28px; border-radius: 8px; text-decoration: none; box-shadow: 0 0 15px rgba(255 255 255 / 80%); animation: blink 1.5s infinite;">▶︎ Full HD Video
-  </a>
+<body>
+
+<div class="container">
+  <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiFS8dOOebibugY6Czn8WlOnygnYKUaTWE9ZeF4hipKk5UbTCEZOk9zL35xOLH0g8WBAW5hLfj7iAmrfEEHIfNn-dXXEeVJIT8pj3cN4LGNV21Aet82ycwb2AnQfFR99hoLZ0u84tH7vOj2kt83PzS6X5LqyGqLHqOYIZcM1eJuOd2UpqEdaaqPpvNM_kc/s771/514252391_122122510562850820_8803327885121524223_n.jpg" alt="Foto Profil" class="profile-pic">
+  <!--CONTRENG-->
+<div class="tooltip">  
+<div style="display: block ">  
+<svg fill='none' height='16' viewBox='0 0 16 16' width='16'>
+  <path clip-rule='evenodd' d='M8 0L9.99182 1.3121L12.3696 1.29622L13.3431 3.48797L15.3519 4.77336L14.9979 7.14888L16 9.32743L14.431 11.1325L14.1082 13.5126L11.8223 14.1741L10.277 16L8 15.308L5.72296 16L4.17772 14.1741L1.89183 13.5126L1.569 11.1325L0 9.32743L1.00206 7.14888L0.648112 4.77336L2.65693 3.48797L3.6304 1.29622L6.00818 1.3121L8 0Z' fill='#0095F6' fill-rule='evenodd'>
+  </path>
+  <path clip-rule='evenodd' d='M10.4036 5.20536L7.18853 8.61884L6.12875 7.49364C5.8814 7.23102 5.46798 7.21864 5.20536 7.466C4.94274 7.71335 4.93036 8.12677 5.17771 8.38939L6.71301 10.0195C6.9709 10.2933 7.40616 10.2933 7.66405 10.0195L11.3546 6.10111C11.6019 5.83848 11.5896 5.42507 11.3269 5.17771C11.0643 4.93036 10.6509 4.94274 10.4036 5.20536Z' fill='white' fill-rule='evenodd'>
+  </path>
+</svg>
 </div>
-<br>
-<center>
-<script async="async" data-cfasync="false" src="https://stopperscared.com/f88e5a6de1ff2705f0752cf87cfa53a3/invoke.js"></script>
-<div id="container-f88e5a6de1ff2705f0752cf87cfa53a3"></div>
-</center>
-<br>
-<center>
-<script async="async" data-cfasync="false" src="https://stopperscared.com/487b7ee5ca50ac813ad96ab7b89640ea/invoke.js"></script>
-<div id="container-487b7ee5ca50ac813ad96ab7b89640ea"></div>
-</center>
-<br>
-<br>
-<center>
-<script async="async" data-cfasync="false" src="https://stopperscared.com/151b3e819e0bb94e8221ac0c7d49ed36/invoke.js"></script>
-<div id="container-151b3e819e0bb94e8221ac0c7d49ed36"></div>
-</center>
-<br>
-<br>
-<center>
-<script async="async" data-cfasync="false" src="https://stopperscared.com/77127d1ee71d013449e6672cf05b23fa/invoke.js"></script>
-<div id="container-77127d1ee71d013449e6672cf05b23fa"></div>
-</center>
-</div>
-</body>
-</html>
+<span class="tooltiptext">Verified</span>
+</div>  
+<!--CONTRENG-->
+  <h1>⬇️ 𝗩𝗜𝗗𝗘𝗢 𝗟𝗜𝗡𝗞 𝗕𝗘𝗟𝗢𝗪 ⬇️</h1>
+  <p>
+   </p>
+  <!-- Link-link --> 
+   <a href="https://megadonald.github.io/altafczx/" class="full-video-btn" target="_blank">𝗣𝗟𝗔𝗬 𝗩𝗜𝗗𝗘𝗢</a>
+   <a href="https://stopperscared.com/x6jdjefid?key=de23776a131f6eeaa91c912b83b1a274" class="full-video-btn" target="_blank">𝗩𝗜𝗣 𝗘𝘅𝗰𝗹𝘂𝘀𝗶𝘃𝗲 𝗖𝗼𝗻𝘁𝗲𝗻𝘁 😇 </a>
+   <a href="https://stopperscared.com/arwu89anp?key=84c3afde103884ffd8b2a321148e7359" class="full-video-btn" target="_blank">𝗙𝗥𝗘𝗘 𝗘𝘅𝗰𝗹𝘂𝘀𝗶𝘃𝗲 𝗖𝗼𝗻𝘁𝗲𝗻𝘁</a>
+   <a href="https://stopperscared.com/sa8e2erm?key=021fcc4b8daf0fbd26f672a3badb1ac0" class="full-video-btn" target="_blank">𝗘𝘅𝗰𝗹𝘂𝘀𝗶𝘃𝗲 𝗖𝗼𝗻𝘁𝗲𝗻𝘁</a>
+   <a href="https://stopperscared.com/sa8e2erm?key=021fcc4b8daf0fbd26f672a3badb1ac0" class="full-video-btn" target="_blank">𝗡𝗲𝘄 𝗣𝗿𝗶𝘃𝗮𝘁𝗲 𝗦𝗶𝘁𝗲</a>
+   <a href="https://stopperscared.com/sa8e2erm?key=021fcc4b8daf0fbd26f672a3badb1ac0" class="full-video-btn" target="_blank">𝗛𝗢𝗠𝗘</a>
+  <br>  
+<marquee class="sampleMarquee" direction="left" scrollamount="5" behavior="scroll"> If the video doesn't open, click on the other server link.
+
+<!-- Histats.com  START  (aync)-->
 <script type="text/javascript">var _Hasync= _Hasync|| [];
 _Hasync.push(['Histats.start', '1,4716773,4,9,110,60,00010000']);
 _Hasync.push(['Histats.fasi', '1']);
@@ -119,3 +168,6 @@ hs.src = ('//s10.histats.com/js15_as.js');
 (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hs);
 })();</script>
 <noscript><a href="/" target="_blank"><img  src="//sstatic1.histats.com/0.gif?4716773&101" alt="" border="0"></a></noscript>
+<!-- Histats.com  END  -->
+
+</body></html>
